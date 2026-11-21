@@ -249,6 +249,7 @@ Sau khi tính toán, hệ thống sắp xếp các phòng theo mức độ phù 
 Chức năng này giúp khách hàng thu hẹp danh sách lựa chọn và tìm kiếm phòng phù hợp với nhu cầu cá nhân.
 
 11. KIỂM TRA CHƯƠNG TRÌNH SAU KHI CÀI ĐẶT
+
 Sau khi hoàn tất cài đặt và cấu hình, thực hiện kiểm tra các chức năng sau:
 | STT | Chức năng | Nội dung kiểm tra |
 |---|---|---|
