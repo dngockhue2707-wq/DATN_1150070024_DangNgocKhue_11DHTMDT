@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá phòng nghỉ, tiện nghi và trải nghiệm đặt phòng tại KS Hotel.">
+    <title>Trang chủ | KS Hotel</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <script src="/js/layout.js" defer></script>
+    <script src="/js/home.js" defer></script>
+    <script src="/js/account-nav.js" defer></script>
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <main class="home-page">
+
+        <!-- 1. BANNER CHÍNH -->
+        <section class="home-hero" id="home">
+
+            <div class="home-hero-text">
+                <span class="section-eyebrow">
+                    KS HOTEL · KHÔNG GIAN NGHỈ DƯỠNG
+                </span>
+
+                <h1>
+                    Không gian lưu trú
+                    <em>sang trọng</em>
+                    và tinh tế cho kỳ nghỉ của bạn.
+                </h1>
+
+                <p>
+                    Khám phá nơi nghỉ ngơi ấm cúng,
+                    các loại phòng đa dạng và dịch vụ chu đáo.
+                    KS Hotel đồng hành cùng bạn
+                    trong từng chuyến đi.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/rooms.html"
+                       class="home-btn home-btn-primary">
+                        Khám phá phòng nghỉ
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="/availability.html"
+                       class="home-btn home-btn-outline">
+                        Tìm phòng trống
+                    </a>
+                </div>
+
+                <div class="hero-small-note">
+                    <span></span>
+                    TINH TẾ TRONG TỪNG KHOẢNH KHẮC
+                </div>
+            </div>
+
+            <div class="home-hero-visual">
+                <div class="hero-main-image"
+                     role="img"
+                     aria-label="Không gian bên ngoài khách sạn KS Hotel">
+
+                    <div class="hero-badge">
+                        <span>CHÀO MỪNG ĐẾN</span>
+                        <strong>KS Hotel</strong>
+                    </div>
+                </div>
+
+                <div class="hero-image-accent"
+                     aria-hidden="true">✦</div>
+            </div>
+        </section>
+
+        <!-- 2. THANH TÌM PHÒNG -->
+        <section class="search-wrap"
+                 aria-label="Tìm phòng nhanh">
+
+            <form class="home-search-bar" id="searchForm">
+
+                <div class="search-field">
+                    <label for="checkin">Ngày nhận phòng</label>
+                    <input type="date"
+                           id="checkin"
+                           required>
+                </div>
+
+                <div class="search-field">
+                    <label for="checkout">Ngày trả phòng</label>
+                    <input type="date"
+                           id="checkout"
+                           required>
+                </div>
+
+                <div class="search-field">
+                    <label for="guests">Số khách</label>
+
+                    <select id="guests">
+                        <option value="1">1 khách</option>
+                        <option value="2" selected>2 khách</option>
+                        <option value="3">3 khách</option>
+                        <option value="4">4 khách</option>
+                        <option value="5">5 khách</option>
+                        <option value="6">6 khách</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                        class="search-button">
+                    Tìm phòng ngay
+                    <span aria-hidden="true">→</span>
+                </button>
+            </form>
+
+            <p id="searchMessage"
+               class="search-message"
+               role="status"
+               aria-live="polite"></p>
+        </section>
+
+        <!-- 3. GIỚI THIỆU - MẪU 1 -->
+        <section class="home-intro section-block"
+                 aria-labelledby="homeIntroTitle">
+
+            <div class="intro-centered">
+
+                <span class="intro-ornament" aria-hidden="true">
+                    ✦
+                </span>
+
+                <span class="section-eyebrow">
+                    CHÀO MỪNG ĐẾN VỚI KS HOTEL
+                </span>
+
+                <h2 id="homeIntroTitle">
+                    Một điểm dừng chân,
+                    <em>nhiều trải nghiệm đáng nhớ.</em>
+                </h2>
+
+                <p class="intro-description">
+                    Một không gian nghỉ ngơi tinh tế,
+                    nơi mỗi kỳ nghỉ đều mang dấu ấn riêng.
+                </p>
+
+                <a href="/about.html"
+                   class="intro-discover-link">
+                    Khám phá KS Hotel
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 4. TRẢI NGHIỆM -->
+        <section class="home-services section-block"
+                 id="experiences">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        TRẢI NGHIỆM TẠI KS HOTEL
+                    </span>
+
+                    <h2>
+                        Được chăm chút cho
+                        <em>kỳ nghỉ của bạn</em>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service-card">
+                    <a href="/rooms.html"
+                       class="service-thumb service-thumb-1"
+                       aria-label="Khám phá phòng nghỉ cao cấp">
+                    </a>
+
+                    <h3>Phòng nghỉ tiện nghi</h3>
+
+                    <p>
+                        Không gian ấm cúng, nhiều loại phòng
+                        cho nhu cầu nghỉ ngơi khác nhau.
+                    </p>
+
+                    <a href="/rooms.html">
+                        Xem phòng
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <a href="/services.html"
+                       class="service-thumb service-thumb-2"
+                       aria-label="Xem các dịch vụ">
+                    </a>
+
+                    <h3>Dịch vụ chu đáo</h3>
+
+                    <p>
+                        Tìm hiểu các dịch vụ hỗ trợ
+                        giúp chuyến lưu trú thuận tiện hơn.
+                    </p>
+
+                    <a href="/services.html">
+                        Xem dịch vụ
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <a href="/availability.html"
+                       class="service-thumb service-thumb-3"
+                       aria-label="Tìm phòng còn trống">
+                    </a>
+
+                    <h3>Đặt phòng dễ dàng</h3>
+
+                    <p>
+                        Tra cứu phòng theo ngày,
+                        lựa chọn phù hợp và theo dõi
+                        đơn trực tuyến.
+                    </p>
+
+                    <a href="/availability.html">
+                        Tìm phòng
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <a href="/recommendations.html"
+                       class="service-thumb service-thumb-4"
+                       aria-label="Khám phá gợi ý phòng">
+                    </a>
+
+                    <h3>Gợi ý phòng phù hợp</h3>
+
+                    <p>
+                        Tham khảo các lựa chọn dựa trên
+                        nhu cầu và ngân sách lưu trú.
+                    </p>
+
+                    <a href="/recommendations.html">
+                        Khám phá
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 5. PHÒNG NGHỈ NỔI BẬT -->
+        <section class="home-showcase section-block"
+                 id="rooms">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        BỘ SƯU TẬP PHÒNG NGHỈ
+                    </span>
+
+                    <h2>
+                        Chọn không gian
+                        <em>thuộc về bạn</em>
+                    </h2>
+                </div>
+
+                <a href="/rooms.html"
+                   class="section-link">
+                    Xem tất cả phòng
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="showcase-grid">
+
+                <a href="/rooms.html" class="showcase-card">
+                    <div class="showcase-image showcase-image-1">
+                        <span class="showcase-tag">TIỆN NGHI</span>
+                    </div>
+
+                    <div class="showcase-content">
+                        <h3>Phòng Tiêu Chuẩn</h3>
+
+                        <p>
+                            Không gian gọn gàng, ấm cúng
+                            dành cho những chuyến đi nhẹ nhàng.
+                        </p>
+
+                        <span>Khám phá loại phòng ↗</span>
+                    </div>
+                </a>
+
+                <a href="/rooms.html" class="showcase-card">
+                    <div class="showcase-image showcase-image-2">
+                        <span class="showcase-tag">TINH TẾ</span>
+                    </div>
+
+                    <div class="showcase-content">
+                        <h3>Phòng Cao Cấp</h3>
+
+                        <p>
+                            Thiết kế thanh lịch, phù hợp
+                            khi bạn muốn tận hưởng thêm
+                            sự thoải mái.
+                        </p>
+
+                        <span>Khám phá loại phòng ↗</span>
+                    </div>
+                </a>
+
+                <a href="/rooms.html" class="showcase-card">
+                    <div class="showcase-image showcase-image-3">
+                        <span class="showcase-tag">GẮN KẾT</span>
+                    </div>
+
+                    <div class="showcase-content">
+                        <h3>Phòng Gia Đình</h3>
+
+                        <p>
+                            Không gian rộng rãi để cùng
+                            người thân tận hưởng
+                            những ngày nghỉ.
+                        </p>
+
+                        <span>Khám phá loại phòng ↗</span>
+                    </div>
+                </a>
+
+                <a href="/rooms.html" class="showcase-card">
+                    <div class="showcase-image showcase-image-4">
+                        <span class="showcase-tag">ĐẲNG CẤP</span>
+                    </div>
+
+                    <div class="showcase-content">
+                        <h3>Phòng Tổng Thống</h3>
+
+                        <p>
+                            Lựa chọn cao cấp dành cho
+                            trải nghiệm lưu trú riêng tư
+                            và sang trọng.
+                        </p>
+
+                        <span>Khám phá loại phòng ↗</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <p class="showcase-note">
+                KS Hotel còn có loại phòng Suite.
+                <a href="/rooms.html">
+                    Khám phá đầy đủ 5 loại phòng →
+                </a>
+            </p>
+        </section>
+
+        <!-- KHU VỰC GỢI Ý PHÒNG CÁ NHÂN HÓA -->
+        <section class="home-personalized section-block"
+                id="personalizedRooms"
+                aria-labelledby="personalizedTitle"
+                hidden>
+
+            <div class="personalized-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        ✦ LỰA CHỌN CÁ NHÂN HÓA
+                    </span>
+
+                    <h2 id="personalizedTitle">
+                        Phòng dành riêng <em>cho bạn</em>
+                    </h2>
+
+                    <p class="personalized-description">
+                        Những lựa chọn được gợi ý dựa trên
+                        sở thích và nhu cầu lưu trú của bạn.
+                    </p>
+
+                    <p class="personalized-dates"
+                    id="personalizedDates"></p>
+                </div>
+
+                <a href="/recommendations.html"
+                class="section-link">
+                    Tùy chỉnh gợi ý ↗
+                </a>
+            </div>
+
+            <div class="personalized-status"
+                id="personalizedStatus"
+                role="status"
+                aria-live="polite">
+            </div>
+
+            <div class="personalized-grid"
+                id="personalizedGrid">
+            </div>
+
+            <div class="personalized-footer"
+                id="personalizedFooter"
+                hidden>
+                <a href="/recommendations.html"
+                class="home-btn home-btn-primary">
+                    Khám phá thêm phòng phù hợp →
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. CÂU CHUYỆN KS HOTEL -->
+        <section class="home-story section-block">
+
+            <div class="story-gallery">
+                <img class="story-photo-main"
+                     src="/images/about/lobby.png"
+                     alt="Sảnh đón tiếp KS Hotel"
+                     loading="lazy">
+
+                <img src="/images/home/interior.png"
+                     alt="Không gian nội thất KS Hotel"
+                     loading="lazy">
+
+                <img src="/images/home/hallway.png"
+                     alt="Hành lang khách sạn KS Hotel"
+                     loading="lazy">
+            </div>
+
+            <div class="story-content">
+                <span class="section-eyebrow">
+                    CÂU CHUYỆN KS HOTEL
+                </span>
+
+                <h2>
+                    Tinh tế trong
+                    <em>từng khoảnh khắc.</em>
+                </h2>
+
+                <p>
+                    Một kỳ nghỉ đáng nhớ không chỉ
+                    đến từ căn phòng đẹp
+                    mà còn từ sự thư thái và dễ dàng
+                    trong từng trải nghiệm.
+                </p>
+
+                <p>
+                    KS Hotel hướng đến không gian
+                    nghỉ ngơi hài hòa,
+                    dịch vụ chu đáo và cách đặt phòng
+                    thuận tiện để bạn có thêm
+                    thời gian tận hưởng chuyến đi.
+                </p>
+
+                <ul class="story-benefits">
+                    <li>
+                        <span>✓</span>
+                        Không gian lưu trú thoải mái
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Đa dạng lựa chọn phòng nghỉ
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Quản lý đặt phòng trực tuyến
+                    </li>
+                </ul>
+
+                <a href="/about.html"
+                   class="section-link">
+                    Khám phá câu chuyện KS Hotel
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 7. QUY TRÌNH ĐẶT PHÒNG -->
+        <section class="home-process section-block">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        QUY TRÌNH ĐẶT PHÒNG
+                    </span>
+
+                    <h2>
+                        Đơn giản và
+                        <em>thuận tiện</em>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="process-grid">
+
+                <article class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Tìm phòng</h3>
+                    <p>
+                        Chọn ngày nhận, trả phòng
+                        và số lượng khách.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Chọn loại phòng</h3>
+                    <p>
+                        Xem hình ảnh, thông tin
+                        và lựa chọn phù hợp.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Đặt phòng</h3>
+                    <p>
+                        Điền thông tin và hoàn tất
+                        các bước đặt phòng.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">04</span>
+                    <h3>Tận hưởng kỳ nghỉ</h3>
+                    <p>
+                        Nhận phòng và tận hưởng
+                        thời gian lưu trú.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 8. GỢI Ý PHÒNG -->
+        <section class="home-recommend">
+
+            <div class="recommend-art"
+                 aria-hidden="true"></div>
+
+            <div class="recommend-copy">
+                <span class="section-eyebrow">
+                    LỰA CHỌN DÀNH CHO BẠN
+                </span>
+
+                <h2>
+                    Chưa biết nên chọn
+                    <em>phòng nào?</em>
+                </h2>
+
+                <p>
+                    Khám phá trang gợi ý phòng để
+                    tham khảo lựa chọn phù hợp
+                    với số lượng khách, ngân sách
+                    và nhu cầu nghỉ ngơi.
+                </p>
+
+                <a href="/recommendations.html"
+                   class="home-btn home-btn-primary">
+                    Khám phá gợi ý phòng
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 9. LỢI ÍCH KHÁCH HÀNG -->
+        <section class="home-assurance section-block">
+
+            <div class="section-heading center-heading">
+                <span class="section-eyebrow">
+                    KS HOTEL ĐỒNG HÀNH CÙNG BẠN
+                </span>
+
+                <h2>
+                    Yên tâm hơn
+                    <em>trong mỗi lựa chọn</em>
+                </h2>
+
+                <p>
+                    Thông tin cần thiết luôn sẵn có
+                    trước và trong chuyến lưu trú của bạn.
+                </p>
+            </div>
+
+            <div class="assurance-grid">
+
+                <article>
+                    <span>✦</span>
+
+                    <h3>Thông tin rõ ràng</h3>
+
+                    <p>
+                        Tham khảo loại phòng và dịch vụ
+                        trước khi quyết định.
+                    </p>
+                </article>
+
+                <article>
+                    <span>◇</span>
+
+                    <h3>Theo dõi đơn đặt phòng</h3>
+
+                    <p>
+                        Đăng nhập để xem các đơn
+                        đặt phòng của mình.
+                    </p>
+                </article>
+
+                <article>
+                    <span>♡</span>
+
+                    <h3>Kênh hỗ trợ</h3>
+
+                    <p>
+                        Gửi thắc mắc qua mục
+                        Tư vấn & Hỗ trợ của khách sạn.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 10. BANNER CUỐI -->
+        <section class="home-cta">
+
+            <div>
+                <span class="section-eyebrow light-eyebrow">
+                    SẴN SÀNG CHO CHUYẾN ĐI?
+                </span>
+
+                <h2>
+                    Hành trình đáng nhớ
+                    <em>bắt đầu từ đây.</em>
+                </h2>
+
+                <p>
+                    Chọn ngày lưu trú và khám phá phòng nghỉ
+                    phù hợp tại KS Hotel.
+                </p>
+            </div>
+
+            <a href="/availability.html"
+               class="cta-button">
+                Tìm phòng ngay
+                <span aria-hidden="true">→</span>
+            </a>
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+</body>
+</html>

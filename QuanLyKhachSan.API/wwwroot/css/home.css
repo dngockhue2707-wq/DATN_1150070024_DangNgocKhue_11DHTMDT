@@ -1,0 +1,1519 @@
+
+/* ============================================
+   KS HOTEL - GIAO DIỆN TRANG CHỦ
+   ============================================ */
+
+.home-page {
+    overflow: hidden;
+    background: #FAF8F5;
+    color: #30251E;
+}
+
+.home-page * {
+    box-sizing: border-box;
+}
+
+.home-page em {
+    font-weight: 400;
+    color: #926024;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    color: #926024;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    line-height: 1.6;
+}
+
+.section-block {
+    width: min(1200px, calc(100% - 64px));
+    margin: auto;
+    padding: 82px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.section-heading h2,
+.story-content h2,
+.home-intro h2 {
+    margin: 12px 0 0;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.3vw, 46px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.section-heading > p {
+    max-width: 320px;
+    margin: 0;
+    color: #817569;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.section-heading.center-heading {
+    display: block;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.center-heading > p {
+    max-width: 580px;
+    margin: 15px auto 0;
+}
+
+.section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #926024;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: gap .2s;
+}
+
+.section-link:hover {
+    gap: 21px;
+    color: #785324;
+}
+
+/* ============================================
+   NÚT BẤM
+   ============================================ */
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 15px;
+    transition:
+        background .2s,
+        transform .2s,
+        color .2s;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+}
+
+.home-btn-primary {
+    background: #926024;
+    border: 1px solid #926024;
+    color: #fff;
+}
+
+.home-btn-primary:hover {
+    background: #785324;
+    color: #fff;
+}
+
+.home-btn-outline {
+    background: transparent;
+    border: 1px solid #926024;
+    color: #926024;
+}
+
+.home-btn-outline:hover {
+    background: #F3E7D6;
+    color: #785324;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.home-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.02fr;
+    align-items: center;
+    gap: 55px;
+    width: min(1320px, calc(100% - 40px));
+    min-height: 620px;
+    margin: 22px auto 0;
+    padding: 58px 58px 92px;
+    border-radius: 25px 25px 75px 75px;
+    background: linear-gradient(
+        125deg,
+        #F7EEDF,
+        #FBF8F3 58%,
+        #F0E7DB
+    );
+}
+
+.home-hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.home-hero-text h1 {
+    margin: 20px 0 24px;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: clamp(43px, 4.5vw, 68px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -1.4px;
+}
+
+.home-hero-text h1 em {
+    font-style: italic;
+}
+
+.home-hero-text p {
+    max-width: 520px;
+    margin: 0 0 26px;
+    color: #766A5E;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-small-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 34px;
+    color: #927860;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero-small-note span {
+    width: 32px;
+    height: 1px;
+    background: #926024;
+}
+
+.home-hero-visual {
+    position: relative;
+    align-self: stretch;
+    min-height: 510px;
+}
+
+.hero-main-image {
+    position: relative;
+    height: 100%;
+    min-height: 510px;
+    border-radius: 38px 38px 55px 38px;
+    background: #D7C5AD
+        url("/images/about/banner.png")
+        center / cover no-repeat;
+    box-shadow: 0 24px 48px rgba(65,45,20,.13);
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 15px 20px;
+    border-radius: 17px;
+    background: rgba(255,253,249,.94);
+    box-shadow: 0 6px 24px rgba(48,37,30,.10);
+}
+
+.hero-badge span {
+    display: block;
+    color: #926024;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.hero-badge strong {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.hero-image-accent {
+    position: absolute;
+    top: -21px;
+    right: -20px;
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #926024;
+    color: white;
+    font-size: 25px;
+}
+
+/* ============================================
+   THANH TÌM PHÒNG
+   ============================================ */
+
+.search-wrap {
+    position: relative;
+    z-index: 5;
+    width: min(1150px, calc(100% - 70px));
+    margin: -54px auto 0;
+}
+
+.home-search-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr .9fr auto;
+    align-items: end;
+    gap: 16px;
+    padding: 25px 27px;
+    border: 1px solid #EADFD2;
+    border-radius: 23px;
+    background: #fff;
+    box-shadow: 0 20px 48px rgba(48,37,30,.10);
+}
+
+.search-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #4F4238;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.search-field input,
+.search-field select {
+    width: 100%;
+    min-width: 0;
+    height: 49px;
+    padding: 10px 13px;
+    border: 1px solid #E7DCD0;
+    border-radius: 13px;
+    background: #FFFDFA;
+    color: #382F28;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    outline: 2px solid rgba(146,96,36,.27);
+    border-color: #926024;
+}
+
+.search-button {
+    height: 49px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    background: #30251E;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background .2s;
+}
+
+.search-button:hover {
+    background: #926024;
+}
+
+.search-message {
+    margin: 9px 10px 0;
+    color: #A43D36;
+    font-size: 14px;
+}
+
+/* ============================================
+   GIỚI THIỆU - MẪU 1 TỐI GIẢN
+   ============================================ */
+
+.home-intro {
+    padding-top: 94px;
+    padding-bottom: 45px;
+}
+
+.intro-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-ornament {
+    display: block;
+    margin-bottom: 18px;
+    color: #B58B54;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.intro-centered .section-eyebrow {
+    color: #926024;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.home-intro .intro-centered h2 {
+    max-width: 1000px;
+    margin: 25px auto 0;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 4.4vw, 58px);
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -.8px;
+    text-align: center;
+}
+
+.home-intro .intro-centered h2 em {
+    display: block;
+    margin-top: 5px;
+    color: #926024;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.intro-description {
+    max-width: 520px;
+    margin: 24px auto 0;
+    color: #817569;
+    font-size: 16px;
+    line-height: 1.85;
+    text-align: center;
+}
+
+.intro-discover-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 26px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #B58B54;
+    color: #926024;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    transition:
+        color .2s ease,
+        gap .2s ease,
+        border-color .2s ease;
+}
+
+.intro-discover-link:hover {
+    gap: 19px;
+    color: #785324;
+    border-color: #785324;
+}
+
+.intro-discover-link:focus-visible {
+    outline: 2px solid #926024;
+    outline-offset: 5px;
+}
+
+/* ============================================
+   TRẢI NGHIỆM
+   ============================================ */
+
+.home-services {
+    padding-top: 55px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    padding: 13px 13px 23px;
+    border: 1px solid #EBE0D3;
+    border-radius: 19px;
+    background: #FFFDFA;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.service-card:hover,
+.showcase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(48,37,30,.08);
+}
+
+.service-thumb {
+    display: block;
+    height: 170px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    background-position: center;
+    background-size: cover;
+    background-color: #E5D7C5;
+    transition: filter .25s;
+}
+
+.service-card:hover .service-thumb {
+    filter: brightness(1.05);
+}
+
+.service-thumb-1 {
+    background-image: url("/images/service/room.png");
+}
+
+.service-thumb-2 {
+    background-image: url("/images/service/amenity.png");
+}
+
+.service-thumb-3 {
+    background-image: url("/images/service/booking.png");
+}
+
+.service-thumb-4 {
+    background-image: url("/images/service/recommend.png");
+}
+
+.service-card h3 {
+    margin: 0 6px 12px;
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.service-card p {
+    min-height: 75px;
+    margin: 0 6px 14px;
+    color: #817569;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.service-card > a:last-child {
+    margin-left: 6px;
+    color: #926024;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.service-card > a:last-child:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   DANH SÁCH PHÒNG
+   ============================================ */
+
+.home-showcase {
+    padding-top: 55px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.showcase-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #EBE0D3;
+    border-radius: 19px;
+    background: #FFFDFA;
+    color: inherit;
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.showcase-image {
+    position: relative;
+    height: 225px;
+    background-size: cover;
+    background-position: center;
+    background-color: #EADBCA;
+}
+
+.showcase-image-1 {
+    background-image: url("/images/home/standard.png");
+}
+
+.showcase-image-2 {
+    background-image: url("/images/home/deluxe.png");
+}
+
+.showcase-image-3 {
+    background-image: url("/images/home/family.png");
+}
+
+.showcase-image-4 {
+    background-image: url("/images/home/president.png");
+}
+
+.showcase-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 7px 11px;
+    border-radius: 20px;
+    background: rgba(255,252,246,.94);
+    color: #926024;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.showcase-content {
+    padding: 20px 18px 22px;
+}
+
+.showcase-content h3 {
+    margin: 0 0 11px;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.showcase-content p {
+    min-height: 100px;
+    margin: 0 0 15px;
+    color: #817569;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.showcase-content > span {
+    color: #926024;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.showcase-note {
+    margin: 22px 0 0;
+    color: #817569;
+    font-size: 14px;
+    text-align: center;
+}
+
+.showcase-note a {
+    color: #926024;
+}
+
+/* ============================================
+   CÂU CHUYỆN KHÁCH SẠN
+   ============================================ */
+
+.home-story {
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    align-items: center;
+    gap: 70px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.story-gallery {
+    display: grid;
+    grid-template-columns: 1.3fr .88fr;
+    grid-template-rows: 215px 215px;
+    gap: 14px;
+    min-width: 0;
+}
+
+.story-gallery img {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    border-radius: 13px;
+    object-fit: cover;
+}
+
+.story-photo-main {
+    grid-row: span 2;
+}
+
+.story-content h2 {
+    margin: 15px 0 22px;
+}
+
+.story-content p {
+    margin: 0 0 15px;
+    color: #817569;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.story-benefits {
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.story-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 12px 0;
+    color: #4A3C32;
+    font-size: 15px;
+}
+
+.story-benefits span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 50%;
+    background: #F1E4D4;
+    color: #926024;
+}
+
+/* ============================================
+   QUY TRÌNH ĐẶT PHÒNG
+   ============================================ */
+
+.home-process {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.process-card {
+    padding: 30px 20px;
+    border: 1px solid #E9DED1;
+    border-radius: 19px;
+    background: #F3EEE7;
+    text-align: center;
+}
+
+.process-number {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 17px;
+    border-radius: 50%;
+    background: white;
+    color: #926024;
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.process-card h3 {
+    margin: 0 0 12px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.process-card p {
+    margin: 0;
+    color: #817569;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   KHU VỰC GỢI Ý PHÒNG
+   ============================================ */
+
+.home-recommend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    width: min(1200px, calc(100% - 64px));
+    margin: 0 auto 28px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #30251E;
+}
+
+.recommend-art {
+    min-height: 365px;
+    background: #735941
+        url("/images/service/recommend.png")
+        center / cover no-repeat;
+}
+
+.recommend-copy {
+    align-self: center;
+    padding: 58px 55px;
+}
+
+.recommend-copy .section-eyebrow {
+    color: #ECCB98;
+}
+
+.recommend-copy h2 {
+    margin: 15px 0 18px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.1vw, 43px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.recommend-copy h2 em {
+    color: #ECCB98;
+}
+
+.recommend-copy p {
+    margin-bottom: 26px;
+    color: #EADED1;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+/* ============================================
+   LỢI ÍCH KHÁCH HÀNG
+   ============================================ */
+
+.home-assurance {
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+.assurance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.assurance-grid article {
+    padding: 32px;
+    border: 1px solid #E9DED1;
+    border-radius: 18px;
+    background: #FFFDFA;
+    text-align: center;
+}
+
+.assurance-grid article > span {
+    display: grid;
+    place-items: center;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #F3E7D6;
+    color: #926024;
+    font-size: 27px;
+}
+
+.assurance-grid h3 {
+    margin: 0 0 11px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.assurance-grid p {
+    margin: 0;
+    color: #817569;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   BANNER CUỐI TRANG
+   ============================================ */
+
+.home-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: min(1200px, calc(100% - 64px));
+    margin: 0 auto 90px;
+    padding: 48px 55px;
+    border-radius: 24px;
+    background: linear-gradient(
+        125deg,
+        #71522F,
+        #98713E
+    );
+}
+
+.home-cta .section-eyebrow {
+    color: #F7DFBA;
+}
+
+.home-cta h2 {
+    margin: 12px 0 13px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.3vw, 44px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.home-cta h2 em {
+    color: #FCE3BA;
+}
+
+.home-cta p {
+    margin: 0;
+    color: #F4E6D4;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 50px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    background: #FFFAF2;
+    color: #6D4A26;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    background: #F1E2CE;
+}
+
+/* ============================================
+   RESPONSIVE - MÁY TÍNH BẢNG
+   ============================================ */
+
+@media (max-width: 1080px) {
+    .home-hero {
+        gap: 30px;
+        padding: 48px 35px 90px;
+    }
+
+    .services-grid,
+    .showcase-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-story {
+        gap: 35px;
+    }
+
+    .home-search-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-button {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - ĐIỆN THOẠI
+   ============================================ */
+
+@media (max-width: 780px) {
+    .section-block {
+        width: calc(100% - 36px);
+        padding: 60px 0;
+    }
+
+    .home-hero {
+        width: calc(100% - 20px);
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 24px 80px;
+    }
+
+    .home-hero-text h1 {
+        font-size: clamp(36px, 8vw, 56px);
+    }
+
+    .home-hero-visual,
+    .hero-main-image {
+        min-height: 360px;
+    }
+
+    .home-hero-visual {
+        height: 360px;
+    }
+
+    .hero-image-accent {
+        right: 0;
+    }
+
+    .search-wrap {
+        width: calc(100% - 36px);
+    }
+
+    .home-search-bar {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .intro-centered {
+        width: 100%;
+    }
+
+    .home-intro {
+        padding-top: 75px;
+        padding-bottom: 35px;
+    }
+
+    .home-intro .intro-centered h2 {
+        max-width: 660px;
+        font-size: clamp(32px, 5.5vw, 45px);
+    }
+
+    .intro-description {
+        max-width: 480px;
+        font-size: 15px;
+    }
+
+    .home-story,
+    .home-recommend {
+        grid-template-columns: 1fr;
+    }
+
+    .home-story {
+        gap: 30px;
+    }
+
+    .story-gallery {
+        grid-template-rows: 170px 170px;
+    }
+
+    .home-recommend {
+        width: calc(100% - 36px);
+    }
+
+    .recommend-art {
+        min-height: 280px;
+    }
+
+    .recommend-copy {
+        padding: 35px;
+    }
+
+    .home-cta {
+        width: calc(100% - 36px);
+        margin-bottom: 55px;
+        padding: 34px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .assurance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .home-hero-text h1 {
+        font-size: 38px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .home-hero-visual,
+    .hero-main-image {
+        min-height: 280px;
+    }
+
+    .home-hero-visual {
+        height: 280px;
+    }
+
+    .hero-main-image {
+        border-radius: 25px;
+    }
+
+    .services-grid,
+    .showcase-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card p,
+    .showcase-content p {
+        min-height: 0;
+    }
+
+    .service-thumb {
+        height: 200px;
+    }
+
+    .showcase-image {
+        height: 230px;
+    }
+
+    .story-gallery {
+        grid-template-rows: 140px 140px;
+        gap: 9px;
+    }
+
+    .story-gallery img {
+        border-radius: 9px;
+    }
+
+    .home-recommend {
+        margin-top: 10px;
+    }
+
+    .recommend-copy {
+        padding: 28px;
+    }
+
+    .home-cta {
+        padding: 28px;
+    }
+
+    .section-heading h2,
+    .story-content h2 {
+        font-size: 32px;
+    }
+
+    .home-intro {
+        padding-top: 60px;
+        padding-bottom: 25px;
+    }
+
+    .intro-ornament {
+        margin-bottom: 15px;
+    }
+
+    .intro-centered .section-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .home-intro .intro-centered h2 {
+        margin-top: 20px;
+        font-size: clamp(29px, 7vw, 36px);
+        line-height: 1.3;
+        letter-spacing: -.3px;
+    }
+
+    .intro-description {
+        margin-top: 18px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .intro-discover-link {
+        margin-top: 21px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   KS HOTEL - CA NHAN HOA TRANG CHU
+   ============================================ */
+
+.home-personalized {
+    padding-top: 65px;
+    padding-bottom: 85px;
+}
+
+.home-personalized[hidden],
+.personalized-footer[hidden] {
+    display: none !important;
+}
+
+.personalized-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.personalized-heading h2 {
+    margin: 12px 0;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.3vw, 46px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.personalized-heading h2 em {
+    color: #926024;
+    font-weight: 400;
+}
+
+.personalized-description {
+    max-width: 600px;
+    margin: 0;
+    color: #817569;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.personalized-dates {
+    margin: 10px 0 0;
+    color: #926024;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.personalized-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.personalized-card {
+    overflow: hidden;
+    border: 1px solid #EAE0D4;
+    border-radius: 19px;
+    background: #FFFDFA;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.personalized-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(48,37,30,.09);
+}
+
+.personalized-image {
+    position: relative;
+    height: 225px;
+    background-color: #EADCCA;
+    background-position: center;
+    background-size: cover;
+}
+
+.personalized-rank {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(255,253,249,.96);
+    color: #926024;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.personalized-card-body {
+    padding: 22px;
+}
+
+.personalized-card h3 {
+    margin: 0 0 12px;
+    color: #30251E;
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.personalized-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #926024;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.personalized-price {
+    margin: 0 0 13px;
+    color: #30251E;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.personalized-price small {
+    color: #817569;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.personalized-reasons {
+    margin: 0 0 17px;
+    padding-left: 19px;
+    color: #817569;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.personalized-reasons li {
+    margin-bottom: 5px;
+}
+
+.personalized-meta {
+    margin: 0 0 18px;
+    color: #74685D;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.personalized-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #926024;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.personalized-card-link:hover {
+    color: #785324;
+    text-decoration: underline;
+}
+
+.personalized-status {
+    color: #817569;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.personalized-status:empty {
+    display: none;
+}
+
+.personalized-empty {
+    padding: 35px;
+    border: 1px solid #EAE0D4;
+    border-radius: 18px;
+    background: #F6F0E8;
+}
+
+.personalized-empty h3 {
+    margin: 0 0 12px;
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.personalized-empty p {
+    margin: 0 0 22px;
+    color: #817569;
+    line-height: 1.8;
+}
+
+.personalized-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+@media (max-width: 1080px) {
+    .personalized-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 780px) {
+    .home-personalized {
+        padding-top: 45px;
+        padding-bottom: 65px;
+    }
+
+    .personalized-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .personalized-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .personalized-image {
+        height: 240px;
+    }
+}
+
+/* ============================================
+   KS HOTEL - CAROUSEL PHONG CA NHAN HOA
+   ============================================ */
+
+.home-personalized {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-personalized .personalized-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    padding: 8px 2px 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x pan-y;
+}
+
+.home-personalized .personalized-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.home-personalized .personalized-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    scroll-snap-align: start;
+    align-self: stretch;
+}
+
+.home-personalized .personalized-card-body {
+    min-height: 285px;
+}
+
+.home-personalized .personalized-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.home-personalized .personalized-arrow {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #DFCEB9;
+    border-radius: 50%;
+    background: #FFFDFA;
+    color: #926024;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.home-personalized .personalized-arrow:hover:not(:disabled) {
+    background: #926024;
+    color: #fff;
+}
+
+.home-personalized .personalized-arrow:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.home-personalized .personalized-empty {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 1000px) {
+    .home-personalized .personalized-card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .home-personalized .personalized-card {
+        flex-basis: 88%;
+    }
+
+    .home-personalized .personalized-grid {
+        gap: 15px;
+    }
+
+    .home-personalized .personalized-controls {
+        margin-top: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-personalized .personalized-grid {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   KS HOTEL - HIEU UNG CAROUSEL
+   ============================================ */
+
+.home-personalized .personalized-card {
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.home-personalized .personalized-image {
+    overflow: hidden;
+    transition:
+        background-size .4s ease,
+        filter .4s ease;
+}
+
+.home-personalized .personalized-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(48, 37, 30, .13);
+}
+
+.home-personalized .personalized-card:hover
+.personalized-image {
+    filter: brightness(1.06);
+}
+
+.home-personalized .personalized-arrow {
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.home-personalized .personalized-arrow:hover:not(:disabled) {
+    transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-personalized .personalized-card,
+    .home-personalized .personalized-image,
+    .home-personalized .personalized-arrow {
+        transition: none !important;
+    }
+}

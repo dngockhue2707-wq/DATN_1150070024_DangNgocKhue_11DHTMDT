@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng nghỉ | KS Hotel</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/rooms.css">
+
+    <script src="/js/layout.js" defer></script>
+    <script src="/js/account-nav.js" defer></script>
+    <script src="/js/rooms.js" defer></script>
+
+    <style>
+        .rooms-recommend-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin: 18px 0 0;
+            padding: 13px 20px;
+            border: 1px solid #926024;
+            border-radius: 9px;
+            background: #926024;
+            color: #fff;
+            font-family: var(--font-body, "Times New Roman", serif);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s ease;
+        }
+
+        .rooms-recommend-link:hover {
+            background: #785324;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main class="rooms-page">
+
+        <section class="rooms-banner">
+            <div class="rooms-banner-inner">
+                <span class="rooms-eyebrow">
+                    KHÁM PHÁ KS HOTEL
+                </span>
+
+                <h1 id="pageTitle">Lựa chọn phòng nghỉ</h1>
+
+                <p id="pageDescription">
+                    Khám phá không gian lưu trú tinh tế,
+                    tiện nghi và phù hợp với chuyến đi của bạn.
+                </p>
+            </div>
+        </section>
+
+        <div class="rooms-container">
+
+            <section id="overviewPanel"
+                    class="rooms-filter-panel">
+
+                <div class="rooms-section-title">
+                    <div>
+                        <span class="rooms-eyebrow">
+                            KHÔNG GIAN DÀNH CHO BẠN
+                        </span>
+
+                        <h2>Khám phá các hạng phòng</h2>
+                    </div>
+
+                    <p>
+                        Chọn hạng phòng để xem những lựa chọn phù hợp.
+                    </p>
+                </div>
+
+                <div class="rooms-filter-row">
+                    <div class="rooms-tabs"
+                        id="roomTypeTabs"></div>
+
+                    <a href="/recommendations.html"
+                    class="rooms-recommend-link">
+                        ✦ Gợi ý phòng phù hợp với tôi →
+                    </a>
+                </div>
+
+            </section>
+
+            <section id="typeNavigation" hidden>
+                <a href="/rooms.html"
+                   class="rooms-back">
+                    ← Xem tất cả hạng phòng
+                </a>
+            </section>
+
+            <p id="roomsMessage"
+               class="rooms-notice"
+               role="status"></p>
+
+            <section id="typeSummary"
+                     class="rooms-type-summary"
+                     hidden>
+
+                <div class="rooms-summary-left">
+
+                    <span class="rooms-eyebrow">
+                        HẠNG PHÒNG KS HOTEL
+                    </span>
+
+                    <h2 id="typeName"></h2>
+
+                    <p id="typeDescription"></p>
+                </div>
+
+                <div class="rooms-summary-right"
+                     id="typePriceBox">
+
+                    <span>Giá phòng từ</span>
+
+                    <strong id="typePrice"></strong>
+
+                    <small>VNĐ / đêm</small>
+                </div>
+
+            </section>
+
+            <section class="rooms-list-section">
+
+                <div class="rooms-list-heading">
+                    <div>
+                        <span class="rooms-eyebrow">
+                            TRẢI NGHIỆM LƯU TRÚ
+                        </span>
+
+                        <h2 id="listTitle">
+                            Danh sách phòng nghỉ
+                        </h2>
+                    </div>
+
+                    <span class="rooms-count"
+                          id="roomCount"></span>
+                </div>
+
+                <div class="rooms-grid"
+                     id="roomsGrid"></div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+</body>
+</html>

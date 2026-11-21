@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tài khoản nhân viên | KS Hotel</title>
+
+    <link rel="stylesheet" href="/css/staff.css">
+    <link rel="stylesheet" href="/css/staff-account.css">
+    <link rel="stylesheet" href="/css/staff-account-boutique.css">
+    <link rel="stylesheet" href="/css/backoffice-fonts.css">
+
+    <script src="/js/staff-layout.js" defer></script>
+    <script src="/js/staff-core.js" defer></script>
+    <script src="/js/staff-account.js" defer></script>
+</head>
+
+<body data-page="account">
+    <div id="staffApp"></div>
+
+    <div id="staffAccountPage"
+         class="staff-account-page"
+         hidden>
+
+        <div class="staff-account-intro">
+            <div>
+                <span class="boutique-account-eyebrow">
+                    STAFF PROFILE
+                </span>
+                <h2>Hồ sơ của tôi</h2>
+            </div>
+            <span class="boutique-account-tag">
+                Tài khoản nhân viên
+            </span>
+        </div>
+
+        <div id="staffAccountMessage"
+             class="staff-account-message"
+             role="status"
+             aria-live="polite"
+             hidden></div>
+
+        <!-- THÔNG TIN NHÂN VIÊN -->
+
+        <section class="staff-account-card boutique-profile-card">
+            <div class="staff-account-card-header">
+                <h3>Thông tin nhân viên</h3>
+            </div>
+
+            <div class="staff-account-grid">
+                <div class="staff-account-field">
+                    <span>Mã nhân viên</span>
+                    <strong id="staffAccountId">—</strong>
+                </div>
+
+                <div class="staff-account-field">
+                    <span>Tên đăng nhập</span>
+                    <strong id="staffAccountUsername">—</strong>
+                </div>
+
+                <div class="staff-account-field">
+                    <span>Chức vụ</span>
+                    <strong id="staffAccountPosition">—</strong>
+                </div>
+
+                <div class="staff-account-field">
+                    <span>Ngày vào làm</span>
+                    <strong id="staffAccountStartDate">—</strong>
+                </div>
+
+                <div class="staff-account-field">
+                    <span>Trạng thái</span>
+                    <strong id="staffAccountStatus">—</strong>
+                </div>
+
+                <div class="staff-account-field">
+                    <span>Ngày tạo tài khoản</span>
+                    <strong id="staffAccountCreatedAt">—</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- CẬP NHẬT HỒ SƠ -->
+
+        <section class="staff-account-card boutique-edit-card">
+            <div class="staff-account-card-header">
+                <h3>Thông tin cá nhân</h3>
+                <p>Cập nhật hồ sơ</p>
+            </div>
+
+            <form id="staffProfileForm"
+                  class="staff-account-form">
+
+                <div class="staff-account-form-grid">
+
+                    <div class="staff-account-input-group">
+                        <label for="staffFullName">
+                            Họ và tên
+                        </label>
+                        <input id="staffFullName"
+                               type="text"
+                               maxlength="100"
+                               autocomplete="name"
+                               required>
+                    </div>
+
+                    <div class="staff-account-input-group">
+                        <label for="staffPhone">
+                            Số điện thoại
+                        </label>
+                        <input id="staffPhone"
+                               type="tel"
+                               maxlength="20"
+                               autocomplete="tel"
+                               placeholder="Số điện thoại">
+                    </div>
+
+                    <div class="staff-account-input-group">
+                        <label for="staffEmail">
+                            Email
+                        </label>
+                        <input id="staffEmail"
+                               type="email"
+                               maxlength="150"
+                               autocomplete="email"
+                               placeholder="Địa chỉ email">
+                    </div>
+
+                    <div class="staff-account-input-group">
+                        <label for="staffAddress">
+                            Địa chỉ
+                        </label>
+                        <input id="staffAddress"
+                               type="text"
+                               maxlength="255"
+                               autocomplete="street-address"
+                               placeholder="Địa chỉ liên hệ">
+                    </div>
+                </div>
+
+                <div class="staff-account-actions">
+                    <button type="button"
+                            id="staffResetProfile"
+                            class="staff-account-button staff-account-button-outline">
+                        Khôi phục
+                    </button>
+
+                    <button type="submit"
+                            id="staffSaveProfile"
+                            class="staff-account-button staff-account-button-primary">
+                        Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ĐỔI MẬT KHẨU -->
+
+        <section class="staff-account-card boutique-password-card">
+            <div class="staff-account-card-header">
+                <h3>Đổi mật khẩu</h3>
+                <p>Bảo mật tài khoản</p>
+            </div>
+
+            <form id="staffPasswordForm"
+                  class="staff-account-form">
+
+                <div class="staff-account-password-grid">
+                    <div class="staff-account-input-group">
+                        <label for="staffOldPassword">
+                            Mật khẩu hiện tại
+                        </label>
+                        <input id="staffOldPassword"
+                               type="password"
+                               autocomplete="current-password"
+                               required>
+                    </div>
+
+                    <div class="staff-account-input-group">
+                        <label for="staffNewPassword">
+                            Mật khẩu mới
+                        </label>
+                        <input id="staffNewPassword"
+                               type="password"
+                               minlength="12"
+                               maxlength="128"
+                               autocomplete="new-password"
+                               placeholder="Tối thiểu 12 ký tự"
+                               required>
+                    </div>
+
+                    <div class="staff-account-input-group">
+                        <label for="staffConfirmPassword">
+                            Xác nhận mật khẩu
+                        </label>
+                        <input id="staffConfirmPassword"
+                               type="password"
+                               minlength="12"
+                               maxlength="128"
+                               autocomplete="new-password"
+                               required>
+                    </div>
+                </div>
+
+                <label class="staff-account-show-password">
+                    <input type="checkbox"
+                           id="staffShowPassword">
+                    <span>Hiện mật khẩu</span>
+                </label>
+
+                <div class="staff-account-actions">
+                    <button type="submit"
+                            id="staffChangePassword"
+                            class="staff-account-button staff-account-button-primary">
+                        Đổi mật khẩu
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
