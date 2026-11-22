@@ -264,17 +264,56 @@ public class RecommendationController : ControllerBase
             )
             .Select(x => new
             {
-                x.MaPhong,
-                x.MaLoaiPhong
+                    x.MaPhong,
+                    x.SoPhong,
+                    x.MaLoaiPhong
             })
             .ToListAsync();
+        
+            var availableCounts = availableRooms
+                .GroupBy(x => x.MaLoaiPhong)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Count()
+                );
 
-        var availableCounts = availableRooms
-            .GroupBy(x => x.MaLoaiPhong)
-            .ToDictionary(
-                g => g.Key,
-                g => g.Count()
-            );
+            var amenityByRoom = new Dictionary<int, HashSet<int>>();
+
+            var connection = _db.Database.GetDbConnection();
+
+            await connection.OpenAsync();
+
+            try
+            {
+                await using var command = connection.CreateCommand();
+
+                command.CommandText = @"
+                    SELECT pt.MaPhong, pt.MaTienNghi
+                    FROM dbo.PhongTienNghiChiTiet pt
+                    INNER JOIN dbo.TienNghi tn
+                        ON pt.MaTienNghi = tn.MaTienNghi
+                    WHERE tn.TrangThai = 1";
+
+                await using var reader = await command.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
+                {
+                    int roomId = reader.GetInt32(0);
+                    int amenityId = reader.GetInt32(1);
+
+                    if (!amenityByRoom.TryGetValue(roomId, out var ids))
+                    {
+                        ids = new HashSet<int>();
+                        amenityByRoom[roomId] = ids;
+                    }
+
+                    ids.Add(amenityId);
+                }
+            }
+            finally
+            {
+                await connection.CloseAsync();
+            }
 
         // 7. XÂY DỰNG VECTOR CONTENT-BASED
 
@@ -310,15 +349,25 @@ public class RecommendationController : ControllerBase
         // 8. TÍNH ĐIỂM GỢI Ý
 
         List<RoomRecommendation> candidates = new();
-
-        foreach (var roomType in roomTypes)
+        
+        foreach (var availableRoom in availableRooms)
         {
-            if (!availableCounts.TryGetValue(
-                roomType.MaLoaiPhong,
-                out int count))
+            var roomType = roomTypes.FirstOrDefault(
+                x => x.MaLoaiPhong == availableRoom.MaLoaiPhong
+            );
+
+            if (roomType == null)
             {
                 continue;
             }
+
+            int count = availableCounts.GetValueOrDefault(
+                roomType.MaLoaiPhong
+            );
+
+            var roomAmenityIds = amenityByRoom.GetValueOrDefault(
+                availableRoom.MaPhong
+            ) ?? new HashSet<int>();
 
             // KIỂM TRA SỨC CHỨA
 
@@ -372,9 +421,7 @@ public class RecommendationController : ControllerBase
                         out int amenityId
                     ))
                 {
-                    matched = roomType.MaTienNghis.Any(
-                        x => x.MaTienNghi == amenityId
-                    );
+                    matched = roomAmenityIds.Contains(amenityId);
                 }
                 else
                 {
@@ -462,17 +509,12 @@ public class RecommendationController : ControllerBase
                     .Values
                     .Where(v => v > 0)
                     .Sum();
-
-                int matchedPriority = roomType
-                    .MaTienNghis
-                    .Where(a =>
-                        preferredAmenities.ContainsKey(
-                            a.MaTienNghi
-                        )
-                    )
-                    .Sum(a => Math.Max(
+                
+                int matchedPriority = roomAmenityIds
+                    .Where(id => preferredAmenities.ContainsKey(id))
+                    .Sum(id => Math.Max(
                         0,
-                        preferredAmenities[a.MaTienNghi]
+                        preferredAmenities[id]
                     ));
 
                 amenityScore = totalPriority > 0
@@ -577,8 +619,10 @@ public class RecommendationController : ControllerBase
 
             candidates.Add(new RoomRecommendation
             {
-                RoomTypeId = roomType.MaLoaiPhong,
-                RoomName = roomType.TenLoaiPhong,
+                    RoomId = availableRoom.MaPhong,
+                    RoomNumber = availableRoom.SoPhong,
+                    RoomTypeId = roomType.MaLoaiPhong,
+                    RoomName = $"Phòng {availableRoom.SoPhong} - {roomType.TenLoaiPhong}",
 
                 PricePerNight = roomType.GiaCoBan,
                 TotalPrice = totalPrice,
@@ -688,6 +732,7 @@ public class RecommendationController : ControllerBase
                 run.KetQuaGoiYs.Add(new KetQuaGoiY
                 {
                     MaLoaiPhong = item.RoomTypeId,
+                        MaPhong = item.RoomId,
 
                     DiemContentBased =
                         item.ContentBasedScore / 100m,
@@ -788,6 +833,10 @@ public class RecommendationController : ControllerBase
 
 public class RoomRecommendation
 {
+    public int RoomId { get; set; }
+
+    public string RoomNumber { get; set; } = "";
+    
     public int RoomTypeId { get; set; }
 
     public string RoomName { get; set; } = "";

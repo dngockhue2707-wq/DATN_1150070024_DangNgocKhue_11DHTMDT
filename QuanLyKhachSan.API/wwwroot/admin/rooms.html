@@ -13,6 +13,7 @@
     <script src="/js/admin-rooms.js" defer></script>
     <script src="/js/admin-room-photos.js" defer></script>
     <script src="/js/admin-room-extras.js" defer></script>
+    <script src="/js/admin-room-amenities.js" defer></script>
     <script src="/js/admin-layout.js" defer></script>
 </head>
 <body data-page="rooms">
@@ -215,6 +216,40 @@
                     Lưu tiện nghi theo loại phòng
                 </button>
             </div>
+
+            <div class="room-extra-panel">
+                <h3>Gán tiện nghi cho từng phòng</h3>
+
+                <div class="room-field">
+                    <label for="specificAmenityType">
+                        Chọn loại phòng
+                    </label>
+
+                    <select id="specificAmenityType"></select>
+                </div>
+
+                <div class="room-field">
+                    <label for="specificAmenityRoom">
+                        Chọn phòng cụ thể
+                    </label>
+
+                    <select id="specificAmenityRoom"></select>
+                </div>
+
+                <div id="specificAmenityCheckboxes"
+                    class="room-checkbox-grid"></div>
+
+                <button id="saveSpecificAmenities"
+                        type="button"
+                        class="admin-button"
+                        disabled>
+                    Lưu tiện nghi cho phòng
+                </button>
+
+                <p id="specificAmenityMessage"
+                role="status"></p>
+            </div>
+
         </section>
 
         <section id="imagesSection" class="room-section" hidden>

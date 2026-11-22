@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 `${room.childrenCapacity || 0} người`
             ),
             createInfo(
-                "Phòng khả dụng",
-                `${room.availableRoomCount || 0} phòng`
+                "Số phòng",
+                room.roomNumber || "Chưa cập nhật"
             ),
             createInfo(
                 "Giá mỗi đêm",
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Chưa gắn mã loại phòng vào URL vì cần
         // đối chiếu tham số thật của rooms.js.      
         viewButton.href =
-            `/rooms.html?type=${encodeURIComponent(room.roomTypeId)}`;
+             `/room-detail.html?id=${encodeURIComponent(room.roomId)}`;
 
         bottom.append(priceBox, viewButton);
 
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
             } else {
                 setNotice(
-                    `Đã tìm thấy ${data.totalCandidates} loại phòng ` +
+                    `Đã tìm thấy ${data.totalCandidates} phòng ` +
                     "có thể xem xét. Danh sách bên dưới được " +
                     "xếp theo điểm phù hợp."
                 );

@@ -190,14 +190,17 @@ public class RoomController : ControllerBase
             .ThenBy(x => x.ThuTuHienThi)
             .Select(x => x.DuongDan)
             .ToListAsync();
-
-        var amenities = await _db.Set<LoaiPhong>()
-            .AsNoTracking()
-            .Where(x => x.MaLoaiPhong == room.maLoaiPhong)
-            .SelectMany(x => x.MaTienNghis)
-            .Where(x => x.TrangThai)
-            .OrderBy(x => x.TenTienNghi)
-            .Select(x => x.TenTienNghi)
+        
+        var amenities = await _db.Database
+            .SqlQuery<string>($@"
+                SELECT tn.TenTienNghi AS [Value]
+                FROM dbo.PhongTienNghiChiTiet AS pt
+                INNER JOIN dbo.TienNghi AS tn
+                    ON pt.MaTienNghi = tn.MaTienNghi
+                WHERE pt.MaPhong = {roomId}
+                AND tn.TrangThai = 1
+                ORDER BY tn.TenTienNghi
+            ")
             .ToListAsync();
 
         return Ok(new

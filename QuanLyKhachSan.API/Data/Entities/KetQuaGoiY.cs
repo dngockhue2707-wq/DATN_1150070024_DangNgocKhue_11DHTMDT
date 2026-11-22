@@ -11,6 +11,8 @@ public partial class KetQuaGoiY
 
     public int MaLoaiPhong { get; set; }
 
+    public int? MaPhong { get; set; }
+
     public decimal DiemContentBased { get; set; }
 
     public decimal DiemWeightedScoring { get; set; }
